@@ -5,7 +5,7 @@ const urljoin = require("url-join");
 /**
  * The default URL of the S5 portal to use in the absence of configuration.
  */
-const defaultS5PortalUrl = "http://127.0.0.1:5522";
+const defaultS5PortalUrl = "http://localhost:5050";
 
 /**
  * The URI prefix for S5-net.

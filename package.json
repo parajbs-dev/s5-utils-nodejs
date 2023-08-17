@@ -1,6 +1,6 @@
 {
   "name": "s5-utils-nodejs",
-  "version": "0.1.0-beta5",
+  "version": "0.1.0-beta5-1",
   "description": "S5 Utils Nodejs ",
   "repository": "https://github.com/parajbs-dev/s5-utils-nodejs",
   "main": "src/index.js",

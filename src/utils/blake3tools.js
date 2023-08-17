@@ -81,7 +81,7 @@ function extractB3hashFromMHash(mHash) {
  */
 function generateCIDFromMHash(mHash, filePath) {
   // Buffer size for storing the file size
-  const bufSize = 4;
+  const bufSize = 16;
 
   // Read the file size synchronously
   const fileSize = fs.statSync(filePath).size;

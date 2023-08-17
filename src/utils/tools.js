@@ -18,20 +18,32 @@ const {
  * @param {number} bufferSize - The desired size of the resulting Buffer.
  * @returns {Buffer} A Buffer containing the converted number.
  */
-function numToBuf(value, bufferSize) {
+function numToBuf(value1, bufferSize) {
+  // Create a buffer of the specified size
   const buffer = Buffer.alloc(bufferSize);
-  let lastIndex = bufferSize - 1;
 
+  // Initialize the index of the last element in the buffer
+  let lastIndex = bufferSize - 1;
+  
+  // Convert the input number to a BigInt
+  let value = BigInt(value1);
+  
+  // Loop through each byte of the buffer
   for (let i = 0; i <= lastIndex; i++) {
-    if (value === 0) {
+    // Check if the value is zero
+    if (value === 0n) {
       lastIndex = i - 1;
       break;
     }
-
-    buffer[i] = value % 256;
-    value = value >> 8;
+    
+    // Store the lowest 8 bits of the value as a number in the buffer
+    buffer[i] = Number(value & 0xffn);
+    
+    // Shift the value right by 8 bits
+    value = value >> 8n;
   }
-
+  
+  // Return the relevant portion of the buffer
   return buffer.slice(0, lastIndex + 1);
 }
 
